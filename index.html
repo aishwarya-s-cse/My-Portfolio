@@ -1,57 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Aishwarya S | Portfolio</title>
     <style>
-        /* I'm using a variable that I haven't defined properly, so the colors will likely fail */
+        /* I'm trying a different color scheme, but I hope this doesn't clash with the fonts */
         body { 
-            background-color: var(--wrong-bg-color); 
-            font-family: serif; 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background-color: #f0f2f5; 
         }
 
-        /* This absolute positioning is definitely going to break the layout on tablets */
-        header {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 500px;
-            background: #004d99;
-            z-index: -1; /* This might hide your name behind the background! */
+        /* I've removed the absolute positioning, but now the header might be too small */
+        .header-box {
+            background-color: #004d99;
+            color: #ffffff;
+            padding: 20px;
+            text-align: left;
         }
 
-        .container {
-            margin-top: 600px; /* This will create a massive empty gap at the top */
+        /* I'm experimenting with a float-based layout because grid was failing */
+        .content-area {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 15px;
         }
 
-        /* I'm trying to use a grid, but I didn't define the columns correctly */
-        .grid-broken {
-            display: grid;
-            grid-template-columns: 0px 0px; 
-            visibility: hidden; /* I accidentally hid the whole project section */
+        .skill-item {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            border: 1px solid black; /* This might look a bit outdated */
+            margin: 5px;
+            text-align: center;
         }
 
-        /* Reference to a local file that doesn't exist on GitHub */
-        .dashboard-img {
-            content: url("C:/Users/Admin/Desktop/my_dashboard.png");
+        /* This might fix the image loading, but I'm still using a placeholder link */
+        .project-img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid red; /* Temporary border to see if it's actually there */
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <div class="header-box">
         <h1>Aishwarya S</h1>
-        <a href="www.linkedin.com/in/aishwarya-s-003">My LinkedIn</a>
-    </header>
+        <p>Data Analyst | Computer Science Engineer</p>
+        <a href="https://www.linkedin.com/in/aishwarya-s-003" style="color:yellow;">LinkedIn Profile</a>
+    </div>
 
-    <div class="container">
+    <div class="content-area">
         <h2>About Me</h2>
-        <p>If you can see this, the background might be white text on a white background because of the CSS variable error above.</p>
+        <p>Hands-on experience in Python, SQL, and data visualization.</p>
 
-        <div class="grid-broken">
-            <div>
-                <h3>ISRO Project</h3>
-                <img class="dashboard-img" alt="This image won't load">
-            </div>
-        </div>
+        <h2>Experience</h2>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">SQL</div>
+        <div class="skill-item">Power BI</div>
+
+        <h3>Latest Project</h3>
+        <img src="https://via.placeholder.com/400" class="project-img" alt="Sales Dashboard">
     </div>
 
 </body>
