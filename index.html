@@ -1,112 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aishwarya S | Data Analyst Portfolio</title>
     <style>
-        :root {
-            --primary: #004d99; /* Professional Blue */
-            --secondary: #f4f4f4;
-            --text: #333;
-        }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--text); background: #fff; }
-        header { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        
-        /* Navigation / Socials */
-        .socials { margin-top: 15px; }
-        .socials a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; border: 1px solid white; padding: 5px 10px; border-radius: 4px; }
-
-        /* Grid for Responsive Design */
-        .section { margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: var(--secondary); padding: 20px; border-radius: 8px; border-left: 5px solid var(--primary); }
-        
-        /* Mobile/Tablet adjustments */
-        @media (max-width: 768px) {
-            header { padding: 30px 10px; }
-            .grid { grid-template-columns: 1fr; }
+        /* I'm using a variable that I haven't defined properly, so the colors will likely fail */
+        body { 
+            background-color: var(--wrong-bg-color); 
+            font-family: serif; 
         }
 
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { background: #e0e7ff; color: #1e40af; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 500; }
-        
-        .design-works img { width: 100%; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        /* This absolute positioning is definitely going to break the layout on tablets */
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 500px;
+            background: #004d99;
+            z-index: -1; /* This might hide your name behind the background! */
+        }
+
+        .container {
+            margin-top: 600px; /* This will create a massive empty gap at the top */
+        }
+
+        /* I'm trying to use a grid, but I didn't define the columns correctly */
+        .grid-broken {
+            display: grid;
+            grid-template-columns: 0px 0px; 
+            visibility: hidden; /* I accidentally hid the whole project section */
+        }
+
+        /* Reference to a local file that doesn't exist on GitHub */
+        .dashboard-img {
+            content: url("C:/Users/Admin/Desktop/my_dashboard.png");
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Aishwarya S</h1>
-    <p>Data Analyst | Computer Science Engineer</p>
-    <div class="socials">
-        <a href="mailto:aishwaryasiva2003@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/aishwarya-s-003">LinkedIn</a>
-    </div>
-</header>
+    <header>
+        <h1>Aishwarya S</h1>
+        <a href="www.linkedin.com/in/aishwarya-s-003">My LinkedIn</a>
+    </header>
 
-<div class="container">
-    <section class="section">
+    <div class="container">
         <h2>About Me</h2>
-        <p>Hands-on Data Analyst with experience in Python, SQL, and Power BI. I specialize in bridging commercial business intelligence with academic space research, focusing on workflow automation and data-driven solutions.</p>
-    </section>
+        <p>If you can see this, the background might be white text on a white background because of the CSS variable error above.</p>
 
-    <section class="section">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL (MySQL)</span>
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">TensorFlow/Keras</span>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>Experience & Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Data Analyst Intern</h3>
-                <p><strong>Izeon Innovative</strong> | 2025–Present</p>
-                <ul>
-                    <li>Developing interactive Power BI dashboards for business improvement.</li>
-                    <li>Analyzing structured data with Python and MySQL.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Telemetry Automation</h3>
-                <p><strong>ISRO Bengaluru</strong> | 2024</p>
-                <ul>
-                    <li>Reduced telemetry conversion errors using endian-aware formatting.</li>
-                    <li>Automated mission Excel database processing via MATLAB.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>Education</h2>
-        <p><strong>B.E. Computer Science and Engineering</strong><br>Rajalakshmi Institute of Technology, Chennai (2021–2025)</p>
-    </section>
-
-    <section class="section design-works">
-        <h2>Design Works (Dashboards)</h2>
-        <div class="grid">
+        <div class="grid-broken">
             <div>
-                <h4>Sales Performance Dashboard</h4>
-                <p>Interactive analytics for USA/Canada market ($2.3M sales volume).</p>
-                <img src="https://via.placeholder.com/600x400?text=Sales+Performance+Dashboard" alt="Power BI Dashboard">
-            </div>
-            <div>
-                <h4>Deep-Space Image Classification</h4>
-                <p>Hybrid CNN-ViT model for astronomical object detection.</p>
-                <img src="https://via.placeholder.com/600x400?text=ML+Research+Result" alt="ML Visualization">
+                <h3>ISRO Project</h3>
+                <img class="dashboard-img" alt="This image won't load">
             </div>
         </div>
-    </section>
-</div>
+    </div>
 
 </body>
 </html>
