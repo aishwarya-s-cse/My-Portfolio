@@ -2,68 +2,153 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aishwarya S | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aishwarya S | Data Analyst Portfolio</title>
     <style>
-        /* I'm trying a different color scheme, but I hope this doesn't clash with the fonts */
-        body { 
-            margin: 0; 
-            font-family: Arial, sans-serif; 
-            background-color: #f0f2f5; 
+        :root {
+            --primary: #004d99;
+            --secondary: #f4f7fa;
+            --accent: #e0e7ff;
+            --text: #1a1a1a;
         }
-
-        /* I've removed the absolute positioning, but now the header might be too small */
-        .header-box {
-            background-color: #004d99;
-            color: #ffffff;
-            padding: 20px;
-            text-align: left;
-        }
-
-        /* I'm experimenting with a float-based layout because grid was failing */
-        .content-area {
-            width: 80%;
-            margin: 20px auto;
-            background: white;
-            padding: 15px;
-        }
-
-        .skill-item {
-            display: inline-block;
-            width: 100px;
-            height: 30px;
-            border: 1px solid black; /* This might look a bit outdated */
-            margin: 5px;
+        
+        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; color: var(--text); background: #fff; line-height: 1.6; }
+        
+        /* 1) Name and Title & 6) Contact & Social Media */
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 50px 20px; 
             text-align: center;
         }
+        .social-links { margin-top: 20px; }
+        .social-links a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 0 10px; 
+            padding: 8px 16px; 
+            border: 1px solid rgba(255,255,255,0.4); 
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
 
-        /* This might fix the image loading, but I'm still using a placeholder link */
-        .project-img {
-            max-width: 100%;
-            height: auto;
-            border: 5px solid red; /* Temporary border to see if it's actually there */
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+
+        /* 7) Responsive Design Works (Grid) */
+        .section { margin-bottom: 50px; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 25px; 
+        }
+
+        /* 3) Skills Tags */
+        .skills-flex { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag { 
+            background: var(--accent); 
+            color: #1e40af; 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-weight: 500; 
+            font-size: 0.85em;
+        }
+
+        /* 4) Experience & Projects Cards */
+        .card { 
+            background: var(--secondary); 
+            padding: 25px; 
+            border-radius: 12px; 
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Image Display for Dashboards */
+        .preview-img { 
+            width: 100%; 
+            border-radius: 8px; 
+            margin-top: 15px; 
+            border: 1px solid #ddd;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            header { padding: 30px 15px; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header-box">
-        <h1>Aishwarya S</h1>
-        <p>Data Analyst | Computer Science Engineer</p>
-        <a href="https://www.linkedin.com/in/aishwarya-s-003" style="color:yellow;">LinkedIn Profile</a>
+<header>
+    <h1>Aishwarya S</h1>
+    <p>Data Analyst | Computer Science Engineer</p>
+    <div class="social-links">
+        <a href="mailto:aishwaryasiva2003@gmail.com">Email Me</a>
+        <a href="https://www.linkedin.com/in/aishwarya-s-003" target="_blank">LinkedIn</a>
     </div>
+</header>
 
-    <div class="content-area">
+<div class="container">
+    <section class="section">
         <h2>About Me</h2>
-        <p>Hands-on experience in Python, SQL, and data visualization.</p>
+        <p>I am a Data Analyst specializing in Python, SQL, and Power BI. My professional journey includes impactful work at <strong>ISRO</strong> and <strong>Izeon Innovative</strong>, focusing on bridging the gap between deep-space research data and business intelligence through automation and visualization.</p>
+    </section>
 
-        <h2>Experience</h2>
-        <div class="skill-item">Python</div>
-        <div class="skill-item">SQL</div>
-        <div class="skill-item">Power BI</div>
+    <section class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-flex">
+            <span class="skill-tag">Python (TensorFlow/OpenCV)</span>
+            <span class="skill-tag">SQL (MySQL)</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">R Programming</span>
+            <span class="skill-tag">Data Visualization</span>
+        </div>
+    </section>
 
-        <h3>Latest Project</h3>
-        <img src="https://via.placeholder.com/400" class="project-img" alt="Sales Dashboard">
-    </div>
+    <section class="section">
+        <h2>Experience & Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Data Analyst Intern</h3>
+                <p><strong>Izeon Innovative Private Ltd</strong> | 2025 – Present</p>
+                <ul>
+                    <li>Developing Power BI dashboards for North American sales metrics.</li>
+                    <li>Analyzing business data using Python and MySQL.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Research Intern</h3>
+                <p><strong>ISRO Bengaluru</strong> | April 2024</p>
+                <ul>
+                    <li>Automated telemetry data processing using MATLAB.</li>
+                    <li>Reduced conversion errors via endian-aware formatting.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Deep-Space ML Project</h3>
+                <p>Hybrid CNN-ViT model for astronomical object detection.</p>
+                <img src="https://via.placeholder.com/600x350?text=ML+Model+Visualization" alt="Project Preview" class="preview-img">
+            </div>
+            <div class="card">
+                <h3>Sales Performance Dashboard</h3>
+                <p>Comprehensive USA/Canada sales tracking with 31.8% West region insight.</p>
+                <img src="https://via.placeholder.com/600x350?text=Power+BI+Dashboard+Preview" alt="Dashboard Preview" class="preview-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Education</h2>
+        <div class="card" style="border-top: none; border-left: 4px solid var(--primary);">
+            <p><strong>Bachelor of Engineering in Computer Science</strong><br>
+            Rajalakshmi Institute of Technology, Chennai (2021 – 2025)</p>
+            <p><strong>Higher Secondary (Math & CS)</strong><br>
+            P. S. Matriculation Higher Secondary School (2021)</p>
+        </div>
+    </section>
+</div>
 
 </body>
 </html>
